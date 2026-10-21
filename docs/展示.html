@@ -1,0 +1,1119 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>医疗科普图文系统｜工作流、制作方法与使用说明</title><style>
+:root{--ink:#233f45;--muted:#6e8185;--teal:#087a72;--line:#dbe7e4;--paper:#fff;--bg:#f5f7f5}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.9 'Microsoft YaHei','PingFang SC',system-ui,sans-serif}a{color:var(--teal);text-underline-offset:4px}
+.hero{background:#123f43;color:#fff;padding:56px max(28px,calc((100vw - 1250px)/2));border-bottom:5px solid #a7d2bf}.eyebrow{font-size:12px;color:#b4dbca;letter-spacing:3px}.hero h1{font-size:40px;line-height:1.4;margin:18px 0 14px;letter-spacing:1px}.hero p{max-width:900px;color:#e0ece7;margin:0;line-height:1.9}.hero-tags{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.hero-tags span{padding:7px 16px;border:1px solid #527b78;border-radius:30px;font-size:13px;color:#e3f0eb}
+.layout{max-width:1370px;margin:auto;padding:34px 28px 50px;display:grid;grid-template-columns:205px minmax(0,1fr);gap:30px}nav{position:sticky;top:25px;align-self:start}nav a{display:block;padding:11px 5px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);font-size:14px}nav span{font:12px/1 monospace;color:#91a39e;padding-right:12px}nav p{font-size:12px;color:var(--muted);margin-top:22px;line-height:1.85}
+.chapter{background:var(--paper);border:1px solid var(--line);padding:34px 38px;border-radius:12px;margin-bottom:28px;overflow-wrap:anywhere}.chapter h1{font-size:28px;line-height:1.5;margin:0 0 22px;color:#155d56}.chapter h2{font-size:22px;line-height:1.6;margin:32px 0 16px;padding-top:22px;border-top:1px solid var(--line);color:#234f4e}.chapter h3{font-size:18px;color:#2f6560}.chapter p{margin:14px 0}li{margin:7px 0}strong{color:#174f4d}
+table{display:block;max-width:100%;overflow:auto;border-collapse:collapse;font-size:14px;margin:20px 0}th,td{border:1px solid var(--line);padding:11px 13px;vertical-align:top;min-width:105px}th{text-align:left;color:#225b51;background:#edf5f0}tr:nth-child(even) td{background:#fbfcfb}blockquote{margin:20px 0;background:#f1f7f1;border-left:4px solid #83b8a0;padding:10px 20px;color:#385d51}code{background:#edf4ef;padding:2px 5px;border-radius:4px;font:0.9em Consolas,monospace}
+img{max-width:100%;height:auto;border-radius:6px}.image-link{display:block;line-height:0;text-decoration:none}.image-link:hover{outline:2px solid #9fc9b7;outline-offset:4px;border-radius:5px}.workflow-figure{max-width:520px;margin:18px auto;background:#f1f4f4;border:1px solid var(--line);border-radius:7px;overflow:hidden}.workflow-figure img{display:block;width:100%;max-height:255px;object-fit:contain}.diagram-figure{margin:22px auto}.diagram-figure img{width:100%;display:block}.sample-figure img{max-height:370px;width:100%;object-fit:contain}.sample-figure{background:#f7f7f3;border-radius:6px}td .sample-figure{min-width:150px;max-width:250px}
+.module-card{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:0 24px;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin:24px 0;background:#fdfefd}.module-card h2{grid-column:1/-1;border:0;margin:0 0 6px;padding:0;font-size:21px}.module-copy{font-size:14px;line-height:1.95}.module-copy p{margin:12px 0}.module-visual{align-self:center}.module-visual .workflow-figure{max-width:260px;margin:0}.module-visual img{max-height:160px}.module-copy table{font-size:12px}.module-copy th,.module-copy td{min-width:70px;padding:8px}
+footer{max-width:1250px;margin:0 auto;padding:0 28px 30px;color:var(--muted);font-size:12px}
+@media(max-width:1100px){.module-card{grid-template-columns:1fr}.module-visual{margin-top:14px}.module-visual .workflow-figure{max-width:440px;margin:auto}.module-visual img{max-height:220px}}
+@media(max-width:850px){.layout{display:block;padding:20px 14px}nav{position:static;display:flex;flex-wrap:wrap;gap:4px 10px;margin-bottom:20px}nav a{font-size:13px;padding:7px}nav p{width:100%;margin:10px 0}.chapter{padding:25px 20px}.hero{padding:34px 22px}.hero h1{font-size:29px}.module-card{padding:17px}.chapter h1{font-size:24px}td,th{min-width:90px}}
+@media print{body{background:#fff;font-size:10pt}.hero{background:#fff;color:#123f43;padding:24px;border-bottom:2px solid #a7d2bf}.hero p,.eyebrow{color:#55736e}.hero-tags,nav{display:none}.layout{display:block;padding:0}.chapter{border:0;padding:20px;page-break-before:always}.module-card{break-inside:avoid;grid-template-columns:1fr 200px}.module-card h2{font-size:14pt}.module-copy{font-size:9pt}table{display:table;font-size:8pt;width:100%;overflow:visible}td,th{min-width:0;padding:5px}.workflow-figure{max-width:420px}.sample-figure img{max-height:100mm}h2{break-after:avoid}footer{display:none}}
+</style></head><body><header class="hero"><div class="eyebrow">COZE · WORKFLOW GUIDE</div><h1>医疗科普图文系统</h1><p>从一个主题开始，明确读者与内容目标，制作文案、分镜和系列图片。<br>了解八个工作流怎样协作，怎样使用飞书，以及怎样把这些方法用到自己的项目中。</p><div class="hero-tags"><span>整体流程与SOP</span><span>八个模块的分工</span><span>视觉资产与飞书</span><span>使用与复用方法</span></div></header><div class="layout"><nav aria-label="章节导航"><a href="#overview"><span>01</span>系统总览</a><a href="#sop"><span>02</span>主题处理与SOP</a><a href="#modules"><span>03</span>工作流分工</a><a href="#production"><span>04</span>图文与飞书</a><a href="#examples"><span>05</span>页面效果</a><a href="#reuse"><span>06</span>独立使用与拓展</a><a href="#usage"><span>07</span>使用说明</a><p>工作流截图采用缩略概览。<br>点击图片可查看原图。<br>个人配置请使用自己的Coze与飞书空间。</p></nav><main><section id="overview" class="chapter"><h1>医疗科普图文系统：从主题到系列图片</h1>
+<p>在Coze中，这套系统把内容制作拆成八个可以协作的工作流：从理解用户想做什么开始，经过选题与医学研究，最后完成文案、分镜、图片和飞书归档。</p>
+<p>这份文档面向想了解系统、使用系统，或借鉴它搭建其他业务流程的读者。可以从<a href="%E5%B1%95%E7%A4%BA.html">图文展示版</a>完整阅读，也可以按下面的主题选择章节。</p>
+<h2>文档导航</h2>
+<table>
+<thead>
+<tr>
+  <th>章节</th>
+  <th>读完可以回答的问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><a href="#sop">01 · 整体流程与操作SOP</a></td>
+  <td>一个新主题来了以后，系统怎样一步步完成内容制作？</td>
+</tr>
+<tr>
+  <td><a href="#modules">02 · 工作流职责与组合</a></td>
+  <td>每个工作流负责什么，它的结果由谁接着使用？</td>
+</tr>
+<tr>
+  <td><a href="#production">03 · 图文生成与飞书协作</a></td>
+  <td>怎样把文案变成系列图片，怎样使用风格资产和飞书？</td>
+</tr>
+<tr>
+  <td><a href="#examples">04 · 图文效果与应用案例</a></td>
+  <td>用户最终能得到哪些内容，这些页面可以怎样组织？</td>
+</tr>
+<tr>
+  <td><a href="#reuse">05 · 模块复用与拓展</a></td>
+  <td>怎样单独使用某个模块，怎样借鉴它搭建新的内容流程？</td>
+</tr>
+</tbody>
+</table>
+<h2>先看整体</h2>
+<p><a class="image-link diagram-figure" href="assets/diagrams/system-flow.svg" target="_blank" rel="noopener"><img src="assets/diagrams/system-flow.svg" alt="系统整体业务流程示意" /></a></p>
+<p>系统中有两层组织：<strong>主对话管理人与任务的沟通，图文创作主线管理一次内容生产。</strong> 意图收集、痛点分析和医学研究为创作准备输入；Script、Graphic和Delivery把输入依次转成文案分镜、图片和保存结果。</p>
+<table>
+<thead>
+<tr>
+  <th>层次</th>
+  <th>工作流</th>
+  <th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>对话与任务</td>
+  <td>科普主对话</td>
+  <td>理解本轮反馈，记录阶段和已确认的信息，安排下一步</td>
+</tr>
+<tr>
+  <td>内容准备</td>
+  <td>意图收集、痛点分析、医学研究</td>
+  <td>明确要做什么、讲哪个问题、依据什么讲</td>
+</tr>
+<tr>
+  <td>生产调度</td>
+  <td>图文创作主线</td>
+  <td>串联脚本、图像和保存三个模块</td>
+</tr>
+<tr>
+  <td>内容生产</td>
+  <td>Script、Graphic、Delivery</td>
+  <td>形成文字、页面图片及飞书内容记录</td>
+</tr>
+</tbody>
+</table>
+<h2>用一个例子理解</h2>
+<p>用户提出：“我想做儿童鼻炎科普，主要给家长看。”</p>
+<p>系统先把这句话整理成需求，继续了解这次想讲的具体内容。需求明确后，痛点分析提供可选的切入点；用户选择后，医学研究形成内容依据与目标。再确认平台、受众版本、形式、风格和比例，图文主线便可以按这些要求组织制作。</p>
+<p>“儿童鼻炎”始终是科普方向，某次选择的具体问题是本次选题。“换一个切入点”保留原方向，“改成水彩”调整制作表达，“重新做儿童睡眠”才进入另一项主题任务。</p>
+<h2>看看制作模块</h2>
+<p><a class="image-link workflow-figure" href="assets/workflows/05-content-main.jpg" target="_blank" rel="noopener"><img src="assets/workflows/05-content-main.jpg" alt="Coze图文创作主线概览" width="540"></a></p>
+
+<p><strong>Script决定内容，Graphic形成画面，Delivery组织保存。</strong> 飞书既提供平台规则与视觉资产，也接收最后的页面记录和图片附件。</p>
+<p>具体的角色一致性、不同风格生成和附件写入过程见<a href="#production">图文生成与飞书协作</a>。</p>
+<h2>看看页面产物</h2>
+<table>
+<thead>
+<tr>
+  <th>封面候选</th>
+  <th>内容候选</th>
+  <th>场景候选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><a class="image-link sample-figure" href="assets/results/page-01.png" target="_blank" rel="noopener"><img src="assets/results/page-01.png" alt="封面候选" /></a></td>
+  <td><a class="image-link sample-figure" href="assets/results/page-03.png" target="_blank" rel="noopener"><img src="assets/results/page-03.png" alt="知识解释候选" /></a></td>
+  <td><a class="image-link sample-figure" href="assets/results/page-06.png" target="_blank" rel="noopener"><img src="assets/results/page-06.png" alt="生活场景候选" /></a></td>
+</tr>
+</tbody>
+</table>
+<p>这三张取自系统一次六页生成的原始候选。它们展示了标题、人物、场景、知识图示和分区文字如何组合；六页完整效果与页面作用见<a href="#examples">图文效果与应用案例</a>。</p>
+<h2>这套做法还能用在哪里</h2>
+<p>只需要整理用户需求时，可以借鉴“新消息+历史需求→提取与补问→统一结果”的意图收集结构；已经有分镜时，可以独立使用Graphic；已经有图文时，可以独立使用Delivery。</p>
+<p>拓展到新领域时，可以把医疗需求字段换成课程、教程或培训字段，把医学资料与角色库换成该领域的知识和视觉资产，沿用分阶段确认、模块交接和系列制作的组织方法。具体案例见<a href="#reuse">模块复用与拓展</a>。</p>
+<h2>阅读与使用</h2>
+<p>双击<a href="%E5%B1%95%E7%A4%BA.html">展示.html</a>可以离线阅读，图文版将截图缩成工作流概览，点击图片可查看原图。转交时保留整个目录即可。</p>
+<p>文中的流程举例用于解释使用方式，课程与教程案例用于说明迁移设计。调用现有医疗模块时，按<a href="#reuse">模块输入约定</a>准备数据；效果图保留候选素材属性。</p>
+</section><section id="sop" class="chapter"><h1>一个主题怎样变成一套图文</h1>
+<p>使用系统时，用户持续说明“想做什么”和“这一版希望怎样调整”。主对话负责把这些信息安排到相应阶段，内容准备与制作工作流在各自阶段完成任务。</p>
+<p>下面用“面向家长的儿童鼻炎科普”说明整体流程。示例用于解释操作逻辑，具体选题和医学内容由实际需求与研究结果决定。</p>
+<h2>1. 把一个想法变成内容需求</h2>
+<p>用户可以从一句话开始：</p>
+<blockquote>
+<p>我想做一组儿童鼻炎科普，主要给家长看。</p>
+</blockquote>
+<p>这句话已经提供了方向和读者。意图收集会保存这些信息，再了解本次想讲的具体困扰、内容范围或情境。用户后续补充年龄、发布平台或风格时，系统把新信息合并到同一份需求中。</p>
+<table>
+<thead>
+<tr>
+  <th>需求维度</th>
+  <th>在内容制作中的用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>科普方向</td>
+  <td>决定本次研究与创作的范围</td>
+</tr>
+<tr>
+  <td>目标读者与年龄</td>
+  <td>决定解释深度、词语和场景</td>
+</tr>
+<tr>
+  <td>具体困扰或内容范围</td>
+  <td>帮助选题从大主题落到可讲清楚的问题</td>
+</tr>
+<tr>
+  <td>平台与形式</td>
+  <td>决定文案组织和页面表达方式</td>
+</tr>
+<tr>
+  <td>风格与比例</td>
+  <td>决定后续视觉制作要求</td>
+</tr>
+</tbody>
+</table>
+<p>需求可以分多轮完成。用户已确认的信息持续保留，新的消息用于补充或修改这份需求。</p>
+<h2>2. 从大主题里挑一个切入点</h2>
+<p>“儿童鼻炎科普”可以包含很多问题。痛点分析通过检索、提炼和归类，整理出若干具体选题，让用户比较和选择。</p>
+<p>用户可以询问某个选题是什么意思，比较两个切入点，或提出“更偏家庭场景”的推荐偏好。候选选题只是本次内容的入口，不会替换原始科普方向。</p>
+<p>用户明确选择一个选题后，系统进入医学研究。后续资料查找、文案和图片由此获得共同的内容目标。</p>
+<h2>3. 为选题建立内容依据</h2>
+<p>医学研究结合知识库和网页材料，提取与已选问题相关的事实，形成医学目标卡。</p>
+<p>目标卡说明本次要让读者理解什么、哪些表达有依据、哪些表述需要避开，以及内容适用的边界。用户可以据此确认、要求调整研究重点，或返回重新选题。</p>
+<p>证据不足时，系统会说明能够表达的范围，再由用户决定是否按受限范围继续。后续文案和图片继续沿用这一范围。</p>
+<h2>4. 确认制作方式</h2>
+<p>内容目标确定后，系统整理五项制作参数，用户可以直接修改其中一项。</p>
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>示例选择</th>
+  <th>对产物的影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>受众版本</td>
+  <td>家长版、儿童版、亲子版</td>
+  <td>解释方式、互动方式和文字难度</td>
+</tr>
+<tr>
+  <td>发布平台</td>
+  <td>小红书、公众号、抖音图文等已配置平台</td>
+  <td>标题、正文和页面组织规则</td>
+</tr>
+<tr>
+  <td>内容形式</td>
+  <td>图文轮播、Q&amp;A、绘本、漫画、互动卡</td>
+  <td>整套内容的阅读方式</td>
+</tr>
+<tr>
+  <td>图片风格</td>
+  <td>3D卡通温馨、手绘水彩、写实插画</td>
+  <td>人物、材质、配色和画面气质</td>
+</tr>
+<tr>
+  <td>图片比例</td>
+  <td>竖版9:16、横版16:9、方图1:1</td>
+  <td>页面布局与展示空间</td>
+</tr>
+</tbody>
+</table>
+<p>例如：“采用家长版、图文轮播、3D卡通温馨风格，竖版9:16。”系统根据这组选择整理草稿，用户确认后进入创作。</p>
+<p>受众版本与原始读者分别记录。例如“6岁孩子的家长”属于面向家长的内容，“6岁孩子自己阅读”则需要儿童表达。</p>
+<h2>5. 先写内容，再分配页面</h2>
+<p>Script读取需求、已选痛点、医学目标和平台规则，选择家长、儿童或亲子创作分支。</p>
+<p>它先生成与检查文案，再锁定标题和正文，最后把内容拆成逐页分镜。分镜决定每页的文字、信息重点、画面情境和呈现要求。</p>
+<p>这一步的结果是一份可以交给视觉模块使用的制作说明。团队也可以停在这里，把文案和分镜交给人工设计继续制作。</p>
+<h2>6. 把分镜做成系列图片</h2>
+<p>Graphic读取整套分镜，识别哪些人物、场景和辅助形象需要出现，然后从资产库匹配参考，准备统一风格与角色设定。</p>
+<p>完成全局页面规划后，系统逐页生成图片候选，检查画面文字、人物和视觉表现，再按需要安排定向重试。最终按页汇总候选素材与检查结果。</p>
+<p>用户得到的是一套围绕同一选题组织的页面图，而文案、分镜、风格和角色参考各有来源，可以分别继续调整。</p>
+<h2>7. 将页面整理进飞书</h2>
+<p>Delivery接收文案分镜包和图片结果，按页整理信息，将图片上传为飞书附件，再创建对应页面记录。</p>
+<p>团队可以在飞书中查看内容、图片、批次与页面信息，安排后续复核和选用。生成结果和保存结果分别反馈，便于先使用已有素材，再处理归档。</p>
+<h2>8. 使用者的操作SOP</h2>
+<table>
+<thead>
+<tr>
+  <th>步骤</th>
+  <th>用户或内容策划做什么</th>
+  <th>系统接着做什么</th>
+  <th>这一阶段得到什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>提出需求</td>
+  <td>说明主题、读者和希望讲的内容</td>
+  <td>保存已知信息，补充必要问题</td>
+  <td>清楚的内容需求</td>
+</tr>
+<tr>
+  <td>选择选题</td>
+  <td>比较候选，明确选一个切入点</td>
+  <td>围绕该问题研究</td>
+  <td>确定的本次选题</td>
+</tr>
+<tr>
+  <td>确认目标</td>
+  <td>阅读医学目标与范围，提出调整或确认</td>
+  <td>保留确认后的内容依据</td>
+  <td>医学目标卡</td>
+</tr>
+<tr>
+  <td>确认参数</td>
+  <td>选择受众、平台、形式、风格、比例</td>
+  <td>整理制作方案并调用创作</td>
+  <td>明确的制作要求</td>
+</tr>
+<tr>
+  <td>查看内容</td>
+  <td>阅读文案、分镜和候选图片</td>
+  <td>汇总页面结果</td>
+  <td>可查看的内容素材</td>
+</tr>
+<tr>
+  <td>选用归档</td>
+  <td>按页复核、确认采用素材，查看飞书记录</td>
+  <td>提供保存结果和页面信息</td>
+  <td>可供团队继续使用的内容记录</td>
+</tr>
+</tbody>
+</table>
+<p>这几个阶段的确认对象不同。确认选题是在决定研究哪个问题；确认医学目标是在决定内容范围；确认制作参数是在决定怎样表达。</p>
+<h2>9. 怎样处理不同主题和修改</h2>
+<p>系统同时记住四类信息：<strong>方向、当前选题、已确认的制作要求、当前阶段</strong>。主对话结合这些信息理解用户本轮的修改。</p>
+<table>
+<thead>
+<tr>
+  <th>用户说什么</th>
+  <th>系统怎样理解</th>
+  <th>哪些内容可以沿用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>“这个选题是什么意思？”</td>
+  <td>仍在讨论当前候选</td>
+  <td>原方向、候选和需求</td>
+</tr>
+<tr>
+  <td>“仍做鼻炎，换一个问题讲。”</td>
+  <td>同方向更换选题</td>
+  <td>读者、平台等需求；医学与创作按新问题更新</td>
+</tr>
+<tr>
+  <td>“给家长的，改成亲子一起看。”</td>
+  <td>调整表达对象与版本</td>
+  <td>原方向与仍适用的内容依据；重新组织表达</td>
+</tr>
+<tr>
+  <td>“风格改成手绘水彩。”</td>
+  <td>调整视觉制作要求</td>
+  <td>已确认的方向、选题和仍适用的内容</td>
+</tr>
+<tr>
+  <td>“重新做儿童睡眠科普。”</td>
+  <td>更换科普方向，进入新任务</td>
+  <td>按新任务重新确认所需信息</td>
+</tr>
+</tbody>
+</table>
+<p>同方向重推荐会保留累计次数。累计成功重推荐达到五轮时，系统请用户补充更具体的偏好，再继续推荐，让讨论逐步收敛到可制作的选题。</p>
+<p><a href="#modules">下一章：八个工作流各自负责什么</a></p>
+</section><section id="modules" class="chapter"><h1>八个工作流各自负责什么</h1>
+<p>系统把任务拆分，让每个模块处理明确的问题，并把整理好的结果交给下一步。理解交接关系后，就能知道哪些模块需要一起使用，哪些可以独立调用。</p>
+<p>这里有两种“意图”处理：<strong>主对话识别用户本轮正在做什么，意图收集整理用户想制作什么内容。</strong> 前者决定走哪条流程，后者形成制作所需的需求。</p>
+<p><a class="image-link diagram-figure" href="assets/diagrams/workflow-map.svg" target="_blank" rel="noopener"><img src="assets/diagrams/workflow-map.svg" alt="八个工作流的组合关系示意" /></a></p>
+<article class="module-card"><h2>1. 科普主对话：理解本轮动作，安排下一步</h2><div class="module-copy">
+<p><strong>作用：</strong> 管理整项任务与用户的多轮沟通。它结合当前阶段和已保存的信息，区分用户是在补需求、问候选、选题、确认医学目标、改参数，还是开始新主题。</p>
+<p>它接收用户消息，读取已知需求、候选、目标卡和内容结果，再选择需要调用的子工作流。用户看到的是自然语言，后台保存的是后续可继续使用的任务信息。</p>
+<p>例如，同样一句“继续”，在已说明医学限制后可能表示接受受限版，在参数草稿之后则需要结合明确的确认对象理解。主对话让用户反馈进入对应业务阶段。</p>
+<p><strong>怎样组合：</strong> 调用意图收集、痛点分析、医学研究和图文创作主线，根据返回结果更新任务状态，再把有用的内容呈现给用户。</p>
+
+
+</div><div class="module-visual"><a class="image-link workflow-figure" href="assets/workflows/01-main-current.jpg" target="_blank" rel="noopener"><img src="assets/workflows/01-main-current.jpg" alt="科普主对话工作流概览" width="520"></a></div></article><article class="module-card"><h2>2. 意图收集：把聊天整理成内容简报</h2><div class="module-copy">
+<p><strong>作用：</strong> 将零散的自然语言逐步整理为完整需求。它同时读取本轮消息和历史需求，提取新信息、继承已知信息，并判断下一步还需要问什么。</p>
+<p>例如，用户先说“做鼻炎科普”，再说“给6岁孩子的家长看”，系统应把两次回答合并：方向是鼻炎，读者是6岁孩子的家长。之后用户补充风格时，原来的方向与读者继续保留。</p>
+<table>
+<thead>
+<tr>
+  <th>接收</th>
+  <th>处理</th>
+  <th>输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>新消息 + 历史需求</td>
+  <td>提取、合并、识别缺项、确认冲突</td>
+  <td>更新后的需求 + 是否完整 + 给用户的下一句回复</td>
+</tr>
+</tbody>
+</table>
+<p>这份需求随后供痛点分析生成检索方向，也供Script和Graphic理解读者、平台、风格等要求。未收集完整时，主对话保存当前信息，再接收下一轮补充。</p>
+<p><strong>可复用的想法：</strong> 把“需要知道哪些信息”“哪些已确认”“还有什么要问”分开记录。这个结构也能用于课程简报、产品需求访谈和服务需求收集。</p>
+
+
+</div><div class="module-visual"><a class="image-link workflow-figure" href="assets/workflows/02-intent.jpg" target="_blank" rel="noopener"><img src="assets/workflows/02-intent.jpg" alt="意图收集工作流概览" width="520"></a></div></article><article class="module-card"><h2>3. 痛点分析：把大方向变成可选的问题</h2><div class="module-copy">
+<p><strong>作用：</strong> 帮用户找到内容的具体切入点。它从需求和新偏好生成关键词，进行九路搜索与网页提炼，再对问题去重、聚类、排序，整理成候选选题及说明。</p>
+<p>面对“儿童鼻炎”，内容策划可以先比较不同困惑，再选择这次要讲清楚的问题。候选说明帮助用户理解选题的生活场景、认知与行为切入点。</p>
+<p>它接收结构化需求和用户补充偏好，输出候选列表。用户明确选定其中一个后，主对话把单个已选对象交给医学研究。</p>
+<p><strong>怎样组合：</strong> 意图收集限定研究范围，痛点分析提出切入点，医学研究为选中的切入点寻找依据。候选来自资料整理，不等同于经过统计验证的关注度排行。</p>
+
+
+</div><div class="module-visual"><a class="image-link workflow-figure" href="assets/workflows/03-pain.jpg" target="_blank" rel="noopener"><img src="assets/workflows/03-pain.jpg" alt="痛点分析九路检索工作流概览" width="520"></a></div></article><article class="module-card"><h2>4. 医学研究：把选题转成有依据的内容目标</h2><div class="module-copy">
+<p><strong>作用：</strong> 为内容创作准备事实、目标和边界。它根据已选痛点检索知识库，在需要时补充网页材料，再提取医学事实，形成医学目标卡。</p>
+<p>这张卡把后续创作需要共同遵守的信息集中起来：本次重点解释什么、依据哪些材料、有哪些限制、哪些表达应避免。</p>
+<table>
+<thead>
+<tr>
+  <th>输入</th>
+  <th>输出</th>
+  <th>下游用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>需求、单个已选痛点、研究调整要求</td>
+  <td>医学目标卡、来源及范围说明</td>
+  <td>Script据此写文案，主对话据此向用户确认</td>
+</tr>
+</tbody>
+</table>
+<p>用户确认后，医学目标与制作要求一起进入Script。医学研究负责知识依据，Script负责把它转成适合读者的表达。</p>
+
+
+</div><div class="module-visual"><a class="image-link workflow-figure" href="assets/workflows/04-medical.jpg" target="_blank" rel="noopener"><img src="assets/workflows/04-medical.jpg" alt="医学研究工作流概览" width="520"></a></div></article><article class="module-card"><h2>5. 图文创作主线：组织一次完整制作</h2><div class="module-copy">
+<p><strong>作用：</strong> 把已经确认的需求和内容目标，依次交给三个制作模块。</p>
+<p>它接收本次选题、需求、已选痛点和医学目标卡，调用Script；获得脚本分镜后调用Graphic；拿到图片结果后调用Delivery。各模块结果最后统一汇总，交回主对话。</p>
+<p><strong>组合的意义：</strong> 内容准备与内容生产具有明确的交接点。上游负责“这次要做什么”，主线负责“按顺序完成制作”，三个子模块各自产出可继续使用的结果。</p>
+
+
+</div><div class="module-visual"><a class="image-link workflow-figure" href="assets/workflows/05-content-main.jpg" target="_blank" rel="noopener"><img src="assets/workflows/05-content-main.jpg" alt="图文创作主线工作流概览" width="540"></a></div></article><article class="module-card"><h2>6. Script：把内容目标写成文案和分镜</h2><div class="module-copy">
+<p><strong>作用：</strong> 决定信息怎样讲、怎样分配到页面。它读取平台规则，根据家长、儿童、亲子模式分别组织语言，完成文案生成与质检，再锁定文字并生成分镜。</p>
+<p>家长表达侧重解释与可理解的内容组织；儿童表达需要适龄语言和场景；亲子表达则需要便于共同阅读或互动。相同选题因此可以形成不同的讲述方式。</p>
+<p>它输出标题、正文与逐页分镜的脚本包。Graphic使用它安排画面，Delivery使用其中的文字和元信息整理页面记录。团队也可以独立使用Script获取文案与设计说明。</p>
+
+
+</div><div class="module-visual"><a class="image-link workflow-figure" href="assets/workflows/06-script.jpg" target="_blank" rel="noopener"><img src="assets/workflows/06-script.jpg" alt="Script三类受众创作分支概览" width="520"></a></div></article><article class="module-card"><h2>7. Graphic：把分镜变成系列视觉</h2><div class="module-copy">
+<p><strong>作用：</strong> 组织整套图片的角色、风格、布局与生成。它先识别跨页人物和场景需求，再匹配资产、准备参考、规划整套页面，最后逐页生图与检查。</p>
+<p>已有角色或风格可以直接进入匹配；需要新的持续角色或派生风格时，则先准备母版、检查并锁定，再提供给页面制作。反复同框的人物还可以通过组合锚点约束相互关系。</p>
+<p>每页生成候选后，系统结合OCR文字检查与视觉检查整理结果，必要时定向重试，最终输出页面素材包。</p>
+<p><strong>怎样组合：</strong> Script提供内容与分镜，飞书提供资产候选，Graphic形成图片，Delivery接着归档。</p>
+
+
+</div><div class="module-visual"><a class="image-link workflow-figure" href="assets/workflows/07-graphic.jpg" target="_blank" rel="noopener"><img src="assets/workflows/07-graphic.jpg" alt="Graphic工作流概览" width="520"></a></div></article><article class="module-card"><h2>8. Delivery：把内容变成可管理的页面记录</h2><div class="module-copy">
+<p><strong>作用：</strong> 将生成结果按页整理，并保存到飞书。它同时读取Script与Graphic的结果，使文字、图片、版本、风格和页面信息能够对应起来。</p>
+<p>图片先上传为飞书附件，再与页面字段一起写入多维表格。保存结果随后返回主线与主对话。</p>
+<p>团队可以按批次、主题和页面查找内容，并继续安排复核、选图和后续使用。相同的归档思路也可以用于其他图文生产项目。</p>
+
+
+</div><div class="module-visual"><a class="image-link workflow-figure" href="assets/workflows/08-delivery.jpg" target="_blank" rel="noopener"><img src="assets/workflows/08-delivery.jpg" alt="Delivery飞书交付工作流概览" width="520"></a></div></article><h2>怎样按目的组合</h2>
+<table>
+<thead>
+<tr>
+  <th>想完成的事情</th>
+  <th>使用的组合</th>
+  <th>得到的产物</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>先把用户需求问清楚</td>
+  <td>主对话 + 意图收集</td>
+  <td>内容需求简报</td>
+</tr>
+<tr>
+  <td>给内容策划准备选题</td>
+  <td>意图收集 + 痛点分析</td>
+  <td>需求背景与候选选题</td>
+</tr>
+<tr>
+  <td>为已选问题准备依据</td>
+  <td>医学研究</td>
+  <td>医学目标卡与来源</td>
+</tr>
+<tr>
+  <td>只要文案和设计说明</td>
+  <td>Script</td>
+  <td>标题、正文、逐页分镜</td>
+</tr>
+<tr>
+  <td>已有合规脚本包，制作系列图片</td>
+  <td>Graphic</td>
+  <td>页面候选图与检查结果</td>
+</tr>
+<tr>
+  <td>已有脚本包和图片包，整理入库</td>
+  <td>Delivery</td>
+  <td>飞书附件与页面记录</td>
+</tr>
+<tr>
+  <td>从用户想法开始制作内容</td>
+  <td>主对话 + 内容准备模块 + 图文创作主线</td>
+  <td>从需求到图文素材及保存反馈的完整任务</td>
+</tr>
+</tbody>
+</table>
+<p>独立调用仍需按对应模块的输入约定准备数据。具体准备方法见<a href="#reuse">模块复用与拓展</a>。</p>
+</section><section id="production" class="chapter"><h1>图文怎样生成，又怎样与飞书协作</h1>
+<p>最后的图文创作主线由Script、Graphic和Delivery三个工作流组成。它们分别处理内容、视觉与保存，飞书为这条链路提供规则和素材，也接收制作结果。</p>
+<h2>1. 从需求到每一页的画面说明</h2>
+<p>Script接收四类信息：本次具体选题、完整需求、已选痛点、医学目标卡。平台规则再补充发布场景中的表达要求。</p>
+<p>它据此完成文案，检查后锁定标题和正文，再输出逐页分镜。分镜把“整篇内容”转成“这一页需要讲什么、画什么”。Graphic由此获得每页的文字、情境和视觉重点。</p>
+<table>
+<thead>
+<tr>
+  <th>阶段</th>
+  <th>输入内容怎样变化</th>
+  <th>给后续带来的帮助</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>需求与目标</td>
+  <td>知道读者、问题、内容边界和表达要求</td>
+  <td>制作围绕同一个目标展开</td>
+</tr>
+<tr>
+  <td>文案</td>
+  <td>将依据整理成读者能理解的标题和正文</td>
+  <td>确定信息与文字</td>
+</tr>
+<tr>
+  <td>分镜</td>
+  <td>把文案分配到页面，并说明画面情境</td>
+  <td>让生图有明确的页面任务</td>
+</tr>
+<tr>
+  <td>页面生成包</td>
+  <td>把分镜、角色、风格、布局与参考图合并</td>
+  <td>每次生图得到相对完整的制作约束</td>
+</tr>
+</tbody>
+</table>
+<h2>2. 飞书在三个位置提供帮助</h2>
+<p><a class="image-link diagram-figure" href="assets/diagrams/feishu-collaboration.svg" target="_blank" rel="noopener"><img src="assets/diagrams/feishu-collaboration.svg" alt="飞书读取规则和资产、接收制作结果的逻辑示意" /></a></p>
+<table>
+<thead>
+<tr>
+  <th>使用位置</th>
+  <th>飞书提供或接收什么</th>
+  <th>系统怎样使用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Script制作前</td>
+  <td>平台表达规则</td>
+  <td>按用户选择的平台匹配规则，影响标题、正文与内容组织</td>
+</tr>
+<tr>
+  <td>Graphic制作前</td>
+  <td>主角、科普角色、疾病形象、风格和布局模板</td>
+  <td>匹配本次分镜需要的角色、视觉参考与页面资源</td>
+</tr>
+<tr>
+  <td>Delivery制作后</td>
+  <td>页面结果记录和图片附件</td>
+  <td>将本批图文组织为可查找、可协作的内容资料</td>
+</tr>
+</tbody>
+</table>
+<p>规则和资产由表格管理后，团队可以持续积累可复用的人物、风格和版式。工作流读取这些配置，再把它们组合到本次主题中。</p>
+<h2>3. 不同风格怎样形成</h2>
+<p>风格首先是制作需求中的一项选择，例如3D卡通温馨、手绘水彩或写实插画。Graphic将它与分镜需求一起处理，形成可用于整套页面的视觉约束。</p>
+<p><strong>已有风格资产：</strong> 从风格库读取候选，匹配并锁定参考，将它纳入后续角色与页面制作。</p>
+<p><strong>派生风格：</strong> 根据本次要求编译风格设定，生成风格母版，检查后锁定，再从母版提炼系列风格语法。</p>
+<p>两条路径最后汇合。页面任务共同继承风格参考与风格语法，使色彩、材质、人物表现和页面氛围围绕同一套设定展开。</p>
+<table>
+<thead>
+<tr>
+  <th>风格方向</th>
+  <th>制作时需要明确的内容</th>
+  <th>可借鉴的使用方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>3D卡通温馨</td>
+  <td>圆润造型、材质、柔和色彩与光线等设定</td>
+  <td>家庭情境、人物陪伴、亲子内容</td>
+</tr>
+<tr>
+  <td>手绘水彩</td>
+  <td>笔触、纸感、配色和人物画法等设定</td>
+  <td>故事阅读、情境表达、柔和插画</td>
+</tr>
+<tr>
+  <td>写实插画</td>
+  <td>人物比例、场景细节和画面质感等设定</td>
+  <td>更贴近现实场景的图解与说明</td>
+</tr>
+</tbody>
+</table>
+<p>表中展示风格配置思路；本说明中的实际候选样张为3D卡通方向。选定风格后仍会根据本次页面内容进行具体设计。</p>
+<h2>4. 多页图片怎样保持人物与表达一致</h2>
+<p>Graphic先从整套分镜识别持续角色、局部角色和场景。需要跨页出现的人物会形成统一的参考来源；已有合适角色时使用资产库，需要补充时先制作角色母版。</p>
+<p>系统还会建立系列视觉事实库，将角色身份、风格和辅助资产放在一起。经常共同出现的人物可以生成组合锚点，让后续页面参考同一组人物关系。</p>
+<table>
+<thead>
+<tr>
+  <th>一致性依据</th>
+  <th>记录或约束的内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>角色参考</td>
+  <td>同一个人物的身份、外观和辨识特征</td>
+</tr>
+<tr>
+  <td>风格参考</td>
+  <td>整套内容的色彩、材质和画面气质</td>
+</tr>
+<tr>
+  <td>组合锚点</td>
+  <td>需要反复同框的人物及相互关系</td>
+</tr>
+<tr>
+  <td>全局页面设计</td>
+  <td>各页的信息层次、布局节奏和视觉分工</td>
+</tr>
+<tr>
+  <td>锁定文字</td>
+  <td>页面中应当呈现的标题与正文</td>
+</tr>
+</tbody>
+</table>
+<p>这些信息会进入逐页生成包。它为系列图文提供共同参考，也让后续检查有具体依据。</p>
+<h2>5. 每页怎样生成和检查</h2>
+<p>每页先生成两个候选，再检查文字与视觉表现。OCR用于读取候选中的文字，与本页应有文字对照；视觉检查关注人物、风格和画面组织。</p>
+<p>需要调整时，系统编译有针对性的重试指令，再生成候选。结果按页保留，最终汇总候选图、检查意见和缺页等页面信息。</p>
+<p>对内容团队来说，这一步提供了可继续选择与复核的素材。对系统设计来说，图片、文字和检查意见始终能对应到同一页。</p>
+<h2>6. 图片怎样真正进入飞书表格</h2>
+<p>Delivery同时拿到Script与Graphic结果，先把本次主题、受众版本、风格、比例以及逐页内容整理到一起。</p>
+<p>工作流通过飞书插件读取表格，并在需要时取得应用访问凭证。保存时，图片按以下路径进入多维表格：</p>
+<p><strong>已有图片地址 → 获取图片文件 → 上传为飞书图片附件 → 取得附件标识 → 与页面字段一起构造记录 → 批量写入多维表格。</strong></p>
+<p>附件标识在技术上是<code>file_token</code>。多维表格图片列用它关联实际附件，用户便可以在记录中查看图片。</p>
+<table>
+<thead>
+<tr>
+  <th>页面记录中的信息类别</th>
+  <th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>主题、批次、页码</td>
+  <td>查找同一篇内容及其全部页面</td>
+</tr>
+<tr>
+  <td>标题、正文和页面说明</td>
+  <td>保留图文中的内容信息</td>
+</tr>
+<tr>
+  <td>受众版本、风格和比例</td>
+  <td>理解这套内容的制作方式</td>
+</tr>
+<tr>
+  <td>候选或采用图片附件</td>
+  <td>查看、比较与使用图像素材</td>
+</tr>
+<tr>
+  <td>页面检查及保存结果</td>
+  <td>支持后续复核与内容管理</td>
+</tr>
+</tbody>
+</table>
+<p>上表说明记录的组织思路，具体列名和枚举由实际飞书表配置决定。图片生成、页面检查和保存情况分别记录，用户可以清楚知道已经获得了哪些素材，以及它们怎样被整理。</p>
+<h2>7. 这条链路给团队留下什么</h2>
+<p>制作完成后，可分别使用文案、分镜、候选图片和页面记录：文案可以继续编辑，分镜可以交给设计人员，图片可以进入选用流程，飞书记录可以作为内容资料库的组成部分。</p>
+<p>风格、角色和平台规则也能持续积累，供后续主题再次调用。新主题沿用生产结构，同时替换本次的问题、内容依据和场景需求。</p>
+<p><a href="#examples">下一章：看看一套图文怎样组织</a></p>
+</section><section id="examples" class="chapter"><h1>图文效果与应用案例</h1>
+<p>系统的产物包括内容准备、文案分镜和图像页面。把它们分开保存，可以让同一套内容以不同方式进入团队的制作流程。</p>
+<h2>1. 最后得到哪些内容</h2>
+<table>
+<thead>
+<tr>
+  <th>产物</th>
+  <th>可以怎样使用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>已确认的需求</td>
+  <td>作为本次制作简报，后续修改有共同依据</td>
+</tr>
+<tr>
+  <td>候选选题与已选痛点</td>
+  <td>支持内容策划，保留本次切入点</td>
+</tr>
+<tr>
+  <td>医学目标与来源</td>
+  <td>为文案和人工复核提供内容范围</td>
+</tr>
+<tr>
+  <td>标题与正文</td>
+  <td>供编辑修改、平台适配或内容再利用</td>
+</tr>
+<tr>
+  <td>逐页分镜</td>
+  <td>供生图模块或人工设计制作页面</td>
+</tr>
+<tr>
+  <td>页面候选图</td>
+  <td>供选图、复核及后续修改</td>
+</tr>
+<tr>
+  <td>飞书页面记录</td>
+  <td>按主题、批次和页码组织团队内容</td>
+</tr>
+</tbody>
+</table>
+<h2>2. 六页候选图示例</h2>
+<p>以下六张取自2026-09-21系统一次真实六页生成，用于展示图文的页面结构与视觉表达。它们保留原始候选样张属性。</p>
+<table>
+<thead>
+<tr>
+  <th>第1页：封面</th>
+  <th>第2页：读者困惑</th>
+  <th>第3页：知识解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><a class="image-link sample-figure" href="assets/results/page-01.png" target="_blank" rel="noopener"><img src="assets/results/page-01.png" alt="封面候选" /></a></td>
+  <td><a class="image-link sample-figure" href="assets/results/page-02.png" target="_blank" rel="noopener"><img src="assets/results/page-02.png" alt="读者困惑页候选" /></a></td>
+  <td><a class="image-link sample-figure" href="assets/results/page-03.png" target="_blank" rel="noopener"><img src="assets/results/page-03.png" alt="知识解释页候选" /></a></td>
+</tr>
+<tr>
+  <td>第4页：误区辨析</td>
+  <td>第5页：行动信息</td>
+  <td>第6页：生活场景</td>
+</tr>
+<tr>
+  <td><a class="image-link sample-figure" href="assets/results/page-04.png" target="_blank" rel="noopener"><img src="assets/results/page-04.png" alt="误区辨析页候选" /></a></td>
+  <td><a class="image-link sample-figure" href="assets/results/page-05.png" target="_blank" rel="noopener"><img src="assets/results/page-05.png" alt="行动信息页候选" /></a></td>
+  <td><a class="image-link sample-figure" href="assets/results/page-06.png" target="_blank" rel="noopener"><img src="assets/results/page-06.png" alt="生活场景页候选" /></a></td>
+</tr>
+</tbody>
+</table>
+<p>这批候选展示了标题、人物、家庭情境、科普角色、器官图示和分区文字的组合方式。样张用于观察制作形式，医学表述与文字采用前由内容团队复核。</p>
+<h2>3. 一套图文的阅读逻辑</h2>
+<p>以上页面可以从内容组织的角度理解：</p>
+<table>
+<thead>
+<tr>
+  <th>页面作用</th>
+  <th>回答读者的哪类问题</th>
+  <th>制作上的表达方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>封面</td>
+  <td>这篇内容与我有什么关系？</td>
+  <td>大标题、核心人物和主题场景</td>
+</tr>
+<tr>
+  <td>读者困惑</td>
+  <td>它是不是在说我关心的事？</td>
+  <td>问题、对话气泡和生活感受</td>
+</tr>
+<tr>
+  <td>知识解释</td>
+  <td>我需要先理解什么？</td>
+  <td>简化图示、分区说明和科普角色</td>
+</tr>
+<tr>
+  <td>误区辨析</td>
+  <td>哪些直觉需要重新理解？</td>
+  <td>对照关系与重点信息</td>
+</tr>
+<tr>
+  <td>行动信息</td>
+  <td>阅读后应该关注什么？</td>
+  <td>分条信息与场景化表达</td>
+</tr>
+<tr>
+  <td>生活场景</td>
+  <td>这些信息怎样回到日常？</td>
+  <td>家庭或生活画面与收束内容</td>
+</tr>
+</tbody>
+</table>
+<p>实际页数与顺序由分镜决定。这个案例展示了从“吸引注意”到“解释问题”、再到“回到场景”的组织方法，可以借鉴到其他知识图文中。</p>
+<h2>4. 同一个主题可以怎样变化</h2>
+<p>以“儿童鼻炎科普”为方向，可以从三个维度调整成品：</p>
+<table>
+<thead>
+<tr>
+  <th>调整维度</th>
+  <th>示例</th>
+  <th>哪部分发生变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>具体切入点</td>
+  <td>从认识问题改为解释常见误区</td>
+  <td>研究重点、内容目标、文案和分镜</td>
+</tr>
+<tr>
+  <td>受众表达</td>
+  <td>从家长阅读改成亲子共读</td>
+  <td>语言、角色互动和页面形式</td>
+</tr>
+<tr>
+  <td>视觉方向</td>
+  <td>从3D卡通改成手绘水彩</td>
+  <td>风格参考、人物表现与页面画法</td>
+</tr>
+</tbody>
+</table>
+<p>系统将这些要求分别管理，因此可以围绕同一内容方向讨论多种制作方案。具体成品仍需按相应参数重新制作。</p>
+<h2>5. 三种实际使用方式</h2>
+<p><strong>内容策划使用。</strong> 先调用意图收集、痛点分析和医学研究，得到需求、选题与内容依据，再由编辑团队写作。</p>
+<p><strong>设计团队使用。</strong> 使用Script输出的文案与分镜，将其交给Graphic或人工设计，完成系列页面。</p>
+<p><strong>内容运营使用。</strong> 通过图文主线制作，再用Delivery把页面组织到飞书，便于查找、复核和选用。</p>
+<p>三个角色可以使用同一条生产链的不同产物，减少重复解释本次主题、读者与制作要求。</p>
+<p><a href="#reuse">下一章：怎样独立使用和迁移这些模块</a></p>
+</section><section id="reuse" class="chapter"><h1>怎样单独使用工作流，并借鉴到其他业务</h1>
+<p>这套系统有两种复用方式：一是按现有输入约定独立调用模块，二是保留组织方法，为新业务调整内容与数据结构。</p>
+<p>前者可以拆开使用当前医疗科普模块；后者是在这些设计上构建新的流程。下面分别说明。</p>
+<h2>1. 单独使用意图收集：得到一份需求简报</h2>
+<p>适合的任务是“先把用户的想法问清楚”。例如内容策划人员只想整理一篇医疗科普的主题、读者、情境和制作偏好，暂时不需要选题或生图。</p>
+<p>调用时把本轮消息和历史需求传入意图收集。它返回更新后的需求、完整性状态与自然语言回复。外层应用保存需求，把回复显示给用户，下一轮继续传入新消息与刚保存的信息。</p>
+<p><strong>组合方式：</strong> 对话入口 → 意图收集 → 保存需求并展示回复 → 接收下一轮消息。需求完整后，可以交给人工策划，也可以继续连接痛点分析。</p>
+<h2>2. 单独使用Script：只制作文案和分镜</h2>
+<p>适合“内容方向与医学依据已明确，想先看文字”的任务。</p>
+<p>准备本次选题、完整需求、单个已选痛点和有效医学目标卡，传入Script。它按照平台和受众模式完成文案与分镜，结果可交给人工编辑、设计人员，或继续交给Graphic。</p>
+<p><strong>得到的价值：</strong> 文案和画面制作之间有明确的分工，团队可以先讨论每页内容，再安排图片制作。</p>
+<h2>3. 单独使用Graphic：按现成分镜制作图片</h2>
+<p>适合已经有符合约定的Script结果包，想围绕既定文字制作系列图文的任务。</p>
+<p>将完整脚本包传给Graphic。包内包含分镜、内容及制作参数，Graphic接着处理风格、角色、布局和逐页生图。</p>
+<p>例如，一套家长版医疗科普分镜已经确定，可以让Graphic依据包中的风格和参考制作页面。需要试另一种风格时，先调整并校验脚本包中的制作要求，再按新要求生成。</p>
+<p>这里的输入是完整分镜包。手工编写分镜时，需要让页面与参数符合Graphic的输入格式；准备完成后，才进入视觉制作。</p>
+<h2>4. 单独使用Delivery：把已有图文整理入库</h2>
+<p>适合已经拿到Script和Graphic结果，接下来只需要保存到飞书的任务。</p>
+<p>将两份结果包一起传入Delivery。它读取主题、页面信息与候选图，完成附件上传和记录整理。这种组合可以直接利用已有内容，归档模块本身不承担写文案或生图。</p>
+<h2>5. 在Coze中怎样连接这些模块</h2>
+<p>可以新建一条用于自己任务的工作流，先定义所需输入，再添加对应的“调用工作流”节点，将上一模块的输出真实引用到下一模块输入，最后整理需要给用户的结果。</p>
+<table>
+<thead>
+<tr>
+  <th>模块</th>
+  <th>现有入口</th>
+  <th>返回结果</th>
+  <th>常见接法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>意图收集</td>
+  <td><code>input</code>、<code>history_info</code></td>
+  <td>完整性状态、用户回复、需求结果</td>
+  <td>交给主对话保存并继续沟通</td>
+</tr>
+<tr>
+  <td>Script</td>
+  <td><code>final_selected_theme</code>、<code>intent_info</code>、<code>pain_points</code>、<code>target_card</code></td>
+  <td><code>script_result</code></td>
+  <td>接Graphic，或交给人工编辑设计</td>
+</tr>
+<tr>
+  <td>Graphic</td>
+  <td><code>script_result</code></td>
+  <td><code>render_result</code></td>
+  <td>与Script结果一同交给Delivery</td>
+</tr>
+<tr>
+  <td>Delivery</td>
+  <td><code>script_result</code>、<code>render_result</code></td>
+  <td><code>delivery_result</code></td>
+  <td>整理页面链接与保存反馈</td>
+</tr>
+</tbody>
+</table>
+<p>需求业务字段统一放在<code>intent_info.data</code>内。Script、Graphic、Delivery的跨流程结果采用固定结构的JSON文本；结构化结果留在数据通道，面向用户展示对应的自然语言或图片。</p>
+<p>实际连接时，输入槽应选择上游的真实变量。稳定的字段、层级与类型，让各模块能够组合。</p>
+<h2>6. 迁移例子一：课程策划的需求收集</h2>
+<p>假设用户说：“我想做一门给新员工看的产品入门课。”课程策划也需要逐轮整理需求，可以借鉴现有意图收集结构。</p>
+<table>
+<thead>
+<tr>
+  <th>医疗科普中收集的内容</th>
+  <th>课程策划中可以改为</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>科普方向</td>
+  <td>课程主题</td>
+</tr>
+<tr>
+  <td>读者与年龄</td>
+  <td>学员角色与基础</td>
+</tr>
+<tr>
+  <td>具体困扰和情境</td>
+  <td>希望掌握的任务与使用场景</td>
+</tr>
+<tr>
+  <td>内容形式</td>
+  <td>微课、培训图卡、操作教程等</td>
+</tr>
+<tr>
+  <td>平台、风格、比例</td>
+  <td>课程载体与呈现要求</td>
+</tr>
+</tbody>
+</table>
+<p>随后定义哪些是必需信息、哪些可以后续确认，保留“本轮消息+历史需求”的输入方式，以及“更新需求+下一句回复”的输出方式。模型提取、代码校验、保存端和下游读端应一起更新为课程字段。</p>
+<p><strong>可以形成的流程：</strong> 学员需求沟通 → 课程简报 → 内容目标 → 课程大纲。需要课件图文时，再接入为课程适配的文案与视觉模块。</p>
+<h2>7. 迁移例子二：产品使用教程的选题与图文</h2>
+<p>假设团队要制作一组“办公软件入门教程”。可以借鉴痛点分析的结构，先从帮助文档、常见咨询和用户反馈中提取问题，再去重、归类，形成可供选择的教程选题。</p>
+<p>选择具体问题后，用官方产品资料与操作规范形成内容依据，再整理文案和分镜。视觉模块使用产品界面、操作步骤图和品牌资产，最终把图文保存到内容表。</p>
+<table>
+<thead>
+<tr>
+  <th>保留的组织方法</th>
+  <th>为新领域调整的内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>需求收集、阶段确认</td>
+  <td>产品、用户角色、操作任务等需求字段</td>
+</tr>
+<tr>
+  <td>检索、聚类、推荐</td>
+  <td>帮助文档、真实咨询和反馈等资料来源</td>
+</tr>
+<tr>
+  <td>先确认依据，再创作</td>
+  <td>产品操作依据与版本适用范围</td>
+</tr>
+<tr>
+  <td>文案与分镜分工</td>
+  <td>步骤、示例、界面状态和文字规则</td>
+</tr>
+<tr>
+  <td>统一视觉参考</td>
+  <td>品牌风格、界面资产与图示规范</td>
+</tr>
+<tr>
+  <td>按页保存</td>
+  <td>教程主题、产品版本、步骤图及页面记录</td>
+</tr>
+</tbody>
+</table>
+<p>现有医学目标卡为医疗领域设计。迁移时应为产品知识定义对应的依据结构，并同步改动生成、校验、读取和展示端。</p>
+<h2>8. 迁移例子三：企业培训图卡</h2>
+<p>假设企业已经有一份确认过的内部流程说明，希望做成培训图卡。可以借鉴后半段生产链：</p>
+<p><strong>确认后的说明材料 → 为培训编写文案与分镜 → 使用企业角色、图标与风格生成页面 → 保存到培训资料表。</strong></p>
+<p>这类任务可以从已有材料直接准备内容输入，按需要取用Script、Graphic、Delivery的组织方法。若需要严格保留界面、图表或标识，可以在视觉制作中结合现成资产和人工排版。</p>
+<h2>9. 复用时先明确五件事</h2>
+<table>
+<thead>
+<tr>
+  <th>要明确的问题</th>
+  <th>对应的设计</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>需要向用户了解什么？</td>
+  <td>需求字段、确认状态与追问规则</td>
+</tr>
+<tr>
+  <td>内容依据从哪里来？</td>
+  <td>知识库、文档来源与领域边界</td>
+</tr>
+<tr>
+  <td>用户最终要什么产物？</td>
+  <td>文案、分镜、图卡或完整内容链</td>
+</tr>
+<tr>
+  <td>画面怎样保持统一？</td>
+  <td>风格、人物、布局与参考资产</td>
+</tr>
+<tr>
+  <td>结果交给谁继续使用？</td>
+  <td>输出结构、保存位置与团队协作方式</td>
+</tr>
+</tbody>
+</table>
+<p>这些问题确定后，再选择需要的工作流组合。模块之间的交接越明确，越容易为自己的场景取用和调整。</p>
+<p><a href="#overview">返回总览</a></p>
+</section><section id="usage" class="chapter"><h1>使用说明</h1>
+<p>本仓库整理了Coze医疗科普图文系统的设计、SOP、工作流概览、图文样例与复用方法。阅读文档可以直接开始；运行实际内容生产，需要在自己的Coze空间准备相应工作流和飞书配置。</p>
+<p>当前仓库未附可直接导入Coze的工作流导出包，仓库中的Python脚本用于生成和检查文档。</p>
+<h2>1. 阅读文档</h2>
+<p>可以直接阅读GitHub首页README，再进入各章节。也可以从Code菜单选择Download ZIP，解压后双击<code>docs/展示.html</code>，离线查看完整图文版。</p>
+<p>使用Git下载：</p>
+<pre><code class="language-bash">git clone https://github.com/luziyangz/coze-medical-infographic-system.git
+cd coze-medical-infographic-system
+</code></pre>
+<p>仓库为私有时，需要使用有访问权限的GitHub账号。</p>
+<table>
+<thead>
+<tr>
+  <th>想做什么</th>
+  <th>建议阅读顺序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>了解系统</td>
+  <td>系统总览 → 工作流职责与组合</td>
+</tr>
+<tr>
+  <td>使用一项科普任务</td>
+  <td>整体流程与SOP → 图文效果与应用案例</td>
+</tr>
+<tr>
+  <td>了解视觉和飞书</td>
+  <td>图文生成与飞书协作</td>
+</tr>
+<tr>
+  <td>单独使用模块或迁移领域</td>
+  <td>模块复用与拓展</td>
+</tr>
+</tbody>
+</table>
+<h2>2. 修改文档并更新图文版</h2>
+<p>普通阅读不需要安装Python依赖。需要更新HTML时，使用Python 3.10或以上版本，并在仓库根目录执行：</p>
+<pre><code class="language-powershell">python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe tools/render_docs.py
+.\.venv\Scripts\python.exe tools/check_release.py
+</code></pre>
+<p>macOS/Linux使用对应虚拟环境命令：</p>
+<pre><code class="language-bash">python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python tools/render_docs.py
+.venv/bin/python tools/check_release.py
+</code></pre>
+<p>编辑<code>docs/</code>中的Markdown，替换或增加<code>docs/assets/</code>中的素材，重新运行生成脚本即可。HTML使用本地图片和样式文件，没有外部字体或脚本依赖。</p>
+<h2>3. 在自己的Coze空间组织工作流</h2>
+<p>先按<a href="#modules">工作流职责与组合</a>准备八个模块，再在调用节点中选择自己空间内的工作流。</p>
+<table>
+<thead>
+<tr>
+  <th>层次</th>
+  <th>需要准备的模块</th>
+  <th>主要交接内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>用户沟通</td>
+  <td>科普主对话</td>
+  <td>当前阶段、用户消息、已确认需求与反馈</td>
+</tr>
+<tr>
+  <td>内容准备</td>
+  <td>意图收集、痛点分析、医学研究</td>
+  <td>需求、候选及已选问题、医学目标</td>
+</tr>
+<tr>
+  <td>制作调度</td>
+  <td>图文创作主线</td>
+  <td>本次选题与内容准备结果</td>
+</tr>
+<tr>
+  <td>制作与归档</td>
+  <td>Script、Graphic、Delivery</td>
+  <td>文案分镜、图片结果、飞书保存反馈</td>
+</tr>
+</tbody>
+</table>
+<p>准备会话保存位置，用来记录需求、当前阶段、候选列表、已选痛点、医学目标、制作参数及内容结果。候选列表和单个已选对象分别管理，需求业务字段统一放在<code>intent_info.data</code>内。</p>
+<h3>图文模块输入约定</h3>
+<table>
+<thead>
+<tr>
+  <th>模块</th>
+  <th>输入</th>
+  <th>输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Script</td>
+  <td><code>final_selected_theme</code>、<code>intent_info</code>、<code>pain_points</code>、<code>target_card</code></td>
+  <td><code>script_result</code></td>
+</tr>
+<tr>
+  <td>Graphic</td>
+  <td><code>script_result</code></td>
+  <td><code>render_result</code></td>
+</tr>
+<tr>
+  <td>Delivery</td>
+  <td><code>script_result</code>、<code>render_result</code></td>
+  <td><code>delivery_result</code></td>
+</tr>
+</tbody>
+</table>
+<p>将上游节点输出真实引用到下游输入。Script、Graphic、Delivery之间传递固定结构的JSON文本；给用户的回复使用自然语言和图片。</p>
+<p>如果从自己已有的Coze导出包开始，在自己空间导入后重新核对调用目标、输入输出、知识库、插件与飞书表。按依赖关系准备制作子流程、图文主线和主对话，再从关联智能体的对话入口使用。</p>
+<h2>4. 准备自己的飞书数据</h2>
+<p>按用途组织以下数据：</p>
+<table>
+<thead>
+<tr>
+  <th>数据</th>
+  <th>内容示例</th>
+  <th>使用模块</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>平台规则</td>
+  <td>平台名称及表达要求</td>
+  <td>Script</td>
+</tr>
+<tr>
+  <td>人物资产</td>
+  <td>主角、科普角色及参考图片</td>
+  <td>Graphic</td>
+</tr>
+<tr>
+  <td>辅助资产</td>
+  <td>疾病形象、器官示意等</td>
+  <td>Graphic</td>
+</tr>
+<tr>
+  <td>风格资产</td>
+  <td>风格说明与参考图片</td>
+  <td>Graphic</td>
+</tr>
+<tr>
+  <td>布局资产</td>
+  <td>页面布局要求与模板</td>
+  <td>Graphic</td>
+</tr>
+<tr>
+  <td>页面结果</td>
+  <td>主题、批次、页码、文字、图片附件及页面信息</td>
+  <td>Delivery</td>
+</tr>
+</tbody>
+</table>
+<p>这些是业务分组，实际列名、类型和枚举需要与自己的工作流映射一致。图片列使用飞书附件类型：将图片上传后取得附件标识，再写入页面记录。</p>
+<p>配置自己的应用认证和表格访问方式。仓库提供的<a href="../config/README.md">配置模板</a>用于记录应当配置的位置，不会自动连接作者账号。</p>
+<h2>5. 开始一项内容任务</h2>
+<p>在关联智能体的对话入口描述需求，例如：</p>
+<blockquote>
+<p>我想做一组给家长看的儿童鼻炎科普，先帮我整理适合讲的具体问题。</p>
+</blockquote>
+<p>按系统追问补充读者与内容范围，选择一个具体选题，阅读并确认医学目标，再确认受众版本、平台、形式、风格和比例。随后由Script、Graphic、Delivery依次制作与整理。</p>
+<p>需要调整时，说明是更换具体问题、修改风格、改变受众，还是重新开始另一主题。完整操作逻辑见<a href="#sop">操作SOP</a>。</p>
+<h2>6. 单独使用模块</h2>
+<ul>
+<li>只整理需求：调用意图收集，保存结果，下一轮继续传入历史需求。</li>
+<li>只制作文字：准备有效需求、选题和医学目标，调用Script获取文案与分镜。</li>
+<li>已有脚本包：调用Graphic，按既定分镜制作系列图片。</li>
+<li>已有脚本与图片结果：调用Delivery，整理飞书附件与页面记录。</li>
+</ul>
+<p>迁移到课程、产品教程或培训图卡时，同步调整需求字段、内容依据、表达规则和视觉资产。具体例子见<a href="#reuse">模块复用与拓展</a>。</p>
+<h2>7. 配置与隐私</h2>
+<p>仓库中的<code>.env.example</code>和<code>config/connections.example.json</code>使用占位值。实际配置保存在本地被忽略的<code>.env</code>或<code>config/local.json</code>，并在自己的Coze连接中填写。</p>
+<p>不要将真实密钥、应用标识、表格标识、私有工作流链接、原始认证导出包或调试记录加入提交。替换工作流截图时，检查地址栏、节点详情、输入值和图片元数据。</p>
+<h2>8. 后续同步修改</h2>
+<p>在这个独立文档仓库中修改并生成HTML，检查通过后同步：</p>
+<pre><code class="language-bash">python tools/check_release.py
+git status --short
+git add README.md docs tools config requirements.txt .env.example .gitignore .gitattributes
+git diff --cached --stat
+git commit -m &quot;Update documentation&quot;
+git push
+</code></pre>
+<p>提交前查看暂存区文件列表，确认个人配置没有进入提交。检查脚本负责常见文本标识和文件引用检查，新增图片仍需人工查看内容。</p>
+<p><a href="../README.md">返回首页</a></p>
+</section></main></div><footer>医疗科普图文系统 · 工作流逻辑、使用方式与模块复用</footer></body></html>

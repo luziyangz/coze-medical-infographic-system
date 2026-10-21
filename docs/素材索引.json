@@ -1,0 +1,73 @@
+{
+  "description": "工作流概览、业务示意与历史候选样张；未包含私人空间及原图服务链接",
+  "assets": [
+    {
+      "file": "assets/diagrams/feishu-collaboration.svg",
+      "sha256": "629b83312619010cd66265e9d6c59acedb5f41512374ca1939dc4afadd1b36aa"
+    },
+    {
+      "file": "assets/diagrams/system-flow.svg",
+      "sha256": "5186e8a5a079c90a2528c64e54ebf60ae68940e9043e364c96cc69bb2354b32e"
+    },
+    {
+      "file": "assets/diagrams/workflow-map.svg",
+      "sha256": "e83a951445c99769fbcc434f8b09916208ba19ad59e777e4bd1d828d1ee28e26"
+    },
+    {
+      "file": "assets/results/page-01.png",
+      "sha256": "94212f859bbb7bcfd88f6c57f00a07874ea9bc738c005ed794e2f070c41208c7"
+    },
+    {
+      "file": "assets/results/page-02.png",
+      "sha256": "663f4d0a41796fcae1806ed2eccb1a885f99437ccbceba6a30097b6e987b01b0"
+    },
+    {
+      "file": "assets/results/page-03.png",
+      "sha256": "a36fc23d767da1fbae543e35dd97aafc76a9f8e8bac5659d20ce78c830104bcf"
+    },
+    {
+      "file": "assets/results/page-04.png",
+      "sha256": "466be12d92ac7c4efae51cc89fbef3073dfb59b2c7006402b3dfb2506979c3ce"
+    },
+    {
+      "file": "assets/results/page-05.png",
+      "sha256": "424f705536e690fc15807fce4261747a67b0dab6694b339567b91182e86ddda3"
+    },
+    {
+      "file": "assets/results/page-06.png",
+      "sha256": "0564283150beb85f4dcb88893ff700b664f559084b3421f4655b78e02c266ffe"
+    },
+    {
+      "file": "assets/workflows/01-main-current.jpg",
+      "sha256": "eae9a78826dd0a452d62124dd7bdb6d588c09ac98f9c6fff1f707de1188f8b1f"
+    },
+    {
+      "file": "assets/workflows/02-intent.jpg",
+      "sha256": "58e83948aa3f2b1b6ab963a51f6a51eb3d81fb3eea56faa865f3e10b0e98ecb0"
+    },
+    {
+      "file": "assets/workflows/03-pain.jpg",
+      "sha256": "e1978850c2bc6aa9b3aac45d67793828bb64b38b170bcb754768471031659764"
+    },
+    {
+      "file": "assets/workflows/04-medical.jpg",
+      "sha256": "215d76845b86d268addaff5c5590bbe8c6508c1539e26097eb7e94424a3d5506"
+    },
+    {
+      "file": "assets/workflows/05-content-main.jpg",
+      "sha256": "d0a75bb4d063ca34ae2a00002f1b47bd1bb02a872ba41b4467105c947aaf07fd"
+    },
+    {
+      "file": "assets/workflows/06-script.jpg",
+      "sha256": "1b7b714c135a0ce2199e13472526f78eeff06687fdbb951cb07db544f05d9a05"
+    },
+    {
+      "file": "assets/workflows/07-graphic.jpg",
+      "sha256": "dc1c446c77bffc718b13f61b0d7401fce2bc6b62a379ffea145fbaa815b3db02"
+    },
+    {
+      "file": "assets/workflows/08-delivery.jpg",
+      "sha256": "dc57389ee8908234819c3cf78cfb9a302956dceaa1b6d8bb75098f306071ed3e"
+    }
+  ]
+}

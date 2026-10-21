@@ -1,0 +1,30 @@
+{
+  "note": "Configuration inventory. Replace placeholders locally and configure your own Coze nodes.",
+  "coze": {
+    "space_id": "YOUR_COZE_SPACE_ID",
+    "workflows": {
+      "main_chat": "YOUR_MAIN_CHAT_WORKFLOW_ID",
+      "intent_collection": "YOUR_INTENT_WORKFLOW_ID",
+      "pain_analysis": "YOUR_PAIN_WORKFLOW_ID",
+      "medical_research": "YOUR_MEDICAL_WORKFLOW_ID",
+      "content_main": "YOUR_CONTENT_MAIN_WORKFLOW_ID",
+      "script": "YOUR_SCRIPT_WORKFLOW_ID",
+      "graphic": "YOUR_GRAPHIC_WORKFLOW_ID",
+      "delivery": "YOUR_DELIVERY_WORKFLOW_ID"
+    }
+  },
+  "feishu": {
+    "app_id": "YOUR_FEISHU_APP_ID",
+    "app_secret": "YOUR_FEISHU_APP_SECRET",
+    "app_token": "YOUR_FEISHU_APP_TOKEN",
+    "tables": {
+      "platform_rules": "YOUR_PLATFORM_RULES_TABLE_ID",
+      "lead_characters": "YOUR_LEAD_CHARACTERS_TABLE_ID",
+      "medical_characters": "YOUR_MEDICAL_CHARACTERS_TABLE_ID",
+      "disease_assets": "YOUR_DISEASE_ASSETS_TABLE_ID",
+      "styles": "YOUR_STYLES_TABLE_ID",
+      "layouts": "YOUR_LAYOUTS_TABLE_ID",
+      "page_results": "YOUR_PAGE_RESULTS_TABLE_ID"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": "medical-education-studio/v1",
+  "project_id": "new-project",
+  "stage": "intent",
+  "intent_info": {
+    "data": {
+      "direction": "",
+      "audience": "",
+      "age_range": null,
+      "reader_problem": null,
+      "platform": null,
+      "format": "carousel",
+      "audience_mode": null,
+      "style": null,
+      "aspect_ratio": "9:16",
+      "page_count": 6
+    },
+    "confirmed": false
+  },
+  "topics": {
+    "candidates": [],
+    "selected": null,
+    "successful_rerecommendations": 0,
+    "preferences": []
+  },
+  "research": {
+    "status": "not_started",
+    "sources": [],
+    "claims": [],
+    "limits": [],
+    "user_accepted_limits": false
+  },
+  "script": {
+    "status": "not_started",
+    "title": "",
+    "body": "",
+    "pages": []
+  },
+  "visual": {
+    "status": "not_started",
+    "style_guide": "",
+    "characters": [],
+    "assets": [],
+    "pages": []
+  },
+  "delivery": {
+    "status": "not_started",
+    "target": "local",
+    "records": []
+  }
+}

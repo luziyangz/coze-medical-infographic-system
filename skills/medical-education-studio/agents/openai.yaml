@@ -1,0 +1,4 @@
+interface:
+  display_name: "医疗科普创作工作室"
+  short_description: "在智能体中完成科普需求、选题研究、文案分镜和视觉交付方案"
+  default_prompt: "请使用 $medical-education-studio，围绕我提供的科普方向，整理需求并推进到本次需要的内容产物。"

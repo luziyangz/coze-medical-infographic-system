@@ -31,7 +31,7 @@ for path in ROOT.rglob('*'):
     rel=path.relative_to(ROOT).as_posix()
     if path.suffix.lower() in {'.zip','.db','.log','.sqlite','.pyc'} or rel in {'.env','config/local.json'}:
         issues.append({'file':rel,'rule':'private_or_generated_file'});continue
-    if path.suffix.lower() not in {'.md','.py','.html','.json','.svg','.txt','.css','.example'} and path.name not in {'.gitignore','.gitattributes'}:continue
+    if path.suffix.lower() not in {'.md','.py','.html','.json','.svg','.txt','.css','.example','.yaml','.yml'} and path.name not in {'.gitignore','.gitattributes'}:continue
     files+=1
     value=path.read_text(encoding='utf-8')
     for rule,pattern in RULES.items():

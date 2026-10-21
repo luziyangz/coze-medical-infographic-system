@@ -15,6 +15,7 @@ CHAPTERS=[
     ('04-图文效果与应用案例.md','examples','页面效果'),
     ('05-模块复用与拓展.md','reuse','独立使用与拓展'),
     ('使用说明.md','usage','使用说明'),
+    ('Skill安装与使用.md','skill','Skill安装与使用'),
 ]
 anchors={name:anchor for name,anchor,_ in CHAPTERS}
 md=mistune.create_markdown(escape=False,plugins=['table','strikethrough'])

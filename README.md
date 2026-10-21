@@ -1,12 +1,35 @@
-# 医疗科普图文系统
+# 医疗科普图文系统｜Coze 工作流与智能体 Skill
+
+本仓库提供两套独立使用的方案：**Coze 工作流方案**与 **医疗科普创作 Skill**。它们采用相近的内容生产方法，分别在 Coze 和 Codex、WorkBuddy 等智能体中执行。
+
+| 你想怎样使用 | 选择哪套 | 开始入口 |
+|---|---|---|
+| 了解或搭建 Coze 中的八个工作流 | Coze 工作流方案 | [Coze 使用说明](docs/使用说明.md) |
+| 让 Codex、WorkBuddy 等智能体组织科普创作 | 独立 Skill | [Skill 安装与使用](docs/Skill安装与使用.md) |
+
+**工作流和 Skill 是两套。** Skill 不会自动导入、调用或修改作者的 Coze 工作流；实际出图和飞书读写使用当前智能体中可用的工具与使用者自己的配置。
+
+## 安装 Skill
+
+[下载独立技能包](https://github.com/luziyangz/coze-medical-infographic-system/releases/download/skill-v1.0.0/medical-education-studio.zip) · [查看技能源码](skills/medical-education-studio/SKILL.md) · [安装与使用说明](docs/Skill安装与使用.md)
+
+- **Codex：** 解压，将完整 `medical-education-studio` 文件夹放入 `~/.agents/skills/`，在任务中使用 `$medical-education-studio`。
+- **WorkBuddy：** 通过“技能 → 添加技能 → 上传技能”导入独立技能包，在对话中使用“医疗科普创作工作室”技能。
+- **其他智能体：** 按宿主对标准 `SKILL.md` 的支持方式安装完整文件夹。
+
+例如：“请使用医疗科普创作工作室，围绕儿童睡眠科普，先整理需求与候选选题。”也可以只做文案分镜、视觉方案，或在具备对应工具时继续实际出图与归档。
+
+安装步骤依据 [Codex 官方说明](https://developers.openai.com/codex/skills/)与 [WorkBuddy 官方说明](https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market)。
+
+## Coze 工作流方案
 
 这是一套在Coze中实现的内容生产系统。用户用自然语言提出一个健康科普主题，系统通过多轮沟通明确需求，研究读者关心的问题与医学依据，再把确认后的内容转化为文案、分镜和系列图片，并通过飞书管理素材与页面结果。
 
 它适合需要持续制作科普内容的团队：同一套流程可以围绕不同健康主题组织内容，也可以为家长、儿童、亲子设置不同的表达方式。
 
-## 快速使用
+## Coze 方案快速使用
 
-这是系统设计、SOP、工作流截图与图文样例的脱敏文档仓库。实际内容生产在使用者自己的Coze空间运行；当前仓库未附可直接导入的工作流导出包。
+Coze 部分提供系统设计、SOP、工作流截图与图文样例的脱敏文档。该方案实际内容生产在使用者自己的 Coze 空间运行；当前仓库未附可直接导入的工作流导出包。独立 Skill 的运行方法见上方入口。
 
 1. 直接阅读下面的README与章节，或从GitHub的Code菜单下载ZIP。
 2. 解压后双击`docs/展示.html`，离线查看完整图文说明。
@@ -35,6 +58,7 @@ python -m venv .venv
 | 想了解什么 | 从这里阅读 |
 |---|---|
 | 完整图文介绍 | [打开展示文档](docs/展示.html) |
+| 在 Codex、WorkBuddy 等智能体中使用 | [Skill 安装与使用](docs/Skill安装与使用.md) |
 | 一个主题怎样变成一套图文 | [整体流程与操作SOP](docs/01-操作SOP.md) |
 | 每个工作流的用途、输入输出与组合关系 | [工作流职责与组合](docs/02-工作流职责与组合.md) |
 | 怎样生成不同风格，与飞书怎样协作 | [图文生成与飞书协作](docs/03-图文生成与飞书协作.md) |
@@ -91,4 +115,4 @@ Script负责文案和分镜，Graphic负责视觉资产、页面设计与图片�
 
 ## 文件说明
 
-完整Markdown、离线HTML、工作流概览和候选样图位于[文档目录](docs/README.md)。截图用于展示模块结构，点击原图可放大；业务流程图为单独绘制的逻辑示意。
+完整 Markdown、离线 HTML、工作流概览和候选样图位于[文档目录](docs/README.md)。独立技能位于 [skills/medical-education-studio](skills/medical-education-studio/SKILL.md)。截图用于展示 Coze 模块结构，点击原图可放大；业务流程图为单独绘制的逻辑示意。

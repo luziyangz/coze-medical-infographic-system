@@ -11,7 +11,8 @@ footer{max-width:1250px;margin:0 auto;padding:0 28px 30px;color:var(--muted);fon
 @media(max-width:1100px){.module-card{grid-template-columns:1fr}.module-visual{margin-top:14px}.module-visual .workflow-figure{max-width:440px;margin:auto}.module-visual img{max-height:220px}}
 @media(max-width:850px){.layout{display:block;padding:20px 14px}nav{position:static;display:flex;flex-wrap:wrap;gap:4px 10px;margin-bottom:20px}nav a{font-size:13px;padding:7px}nav p{width:100%;margin:10px 0}.chapter{padding:25px 20px}.hero{padding:34px 22px}.hero h1{font-size:29px}.module-card{padding:17px}.chapter h1{font-size:24px}td,th{min-width:90px}}
 @media print{body{background:#fff;font-size:10pt}.hero{background:#fff;color:#123f43;padding:24px;border-bottom:2px solid #a7d2bf}.hero p,.eyebrow{color:#55736e}.hero-tags,nav{display:none}.layout{display:block;padding:0}.chapter{border:0;padding:20px;page-break-before:always}.module-card{break-inside:avoid;grid-template-columns:1fr 200px}.module-card h2{font-size:14pt}.module-copy{font-size:9pt}table{display:table;font-size:8pt;width:100%;overflow:visible}td,th{min-width:0;padding:5px}.workflow-figure{max-width:420px}.sample-figure img{max-height:100mm}h2{break-after:avoid}footer{display:none}}
-</style></head><body><header class="hero"><div class="eyebrow">COZE · WORKFLOW GUIDE</div><h1>医疗科普图文系统</h1><p>从一个主题开始，明确读者与内容目标，制作文案、分镜和系列图片。<br>了解八个工作流怎样协作，怎样使用飞书，以及怎样把这些方法用到自己的项目中。</p><div class="hero-tags"><span>整体流程与SOP</span><span>八个模块的分工</span><span>视觉资产与飞书</span><span>使用与复用方法</span></div></header><div class="layout"><nav aria-label="章节导航"><a href="#overview"><span>01</span>系统总览</a><a href="#sop"><span>02</span>主题处理与SOP</a><a href="#modules"><span>03</span>工作流分工</a><a href="#production"><span>04</span>图文与飞书</a><a href="#examples"><span>05</span>页面效果</a><a href="#reuse"><span>06</span>独立使用与拓展</a><a href="#usage"><span>07</span>使用说明</a><p>工作流截图采用缩略概览。<br>点击图片可查看原图。<br>个人配置请使用自己的Coze与飞书空间。</p></nav><main><section id="overview" class="chapter"><h1>医疗科普图文系统：从主题到系列图片</h1>
+</style></head><body><header class="hero"><div class="eyebrow">COZE · WORKFLOW GUIDE</div><h1>医疗科普图文系统</h1><p>从一个主题开始，明确读者与内容目标，制作文案、分镜和系列图片。<br>了解八个工作流怎样协作，怎样使用飞书，以及怎样把这些方法用到自己的项目中。</p><div class="hero-tags"><span>整体流程与SOP</span><span>八个模块的分工</span><span>视觉资产与飞书</span><span>使用与复用方法</span></div></header><div class="layout"><nav aria-label="章节导航"><a href="#overview"><span>01</span>系统总览</a><a href="#sop"><span>02</span>主题处理与SOP</a><a href="#modules"><span>03</span>工作流分工</a><a href="#production"><span>04</span>图文与飞书</a><a href="#examples"><span>05</span>页面效果</a><a href="#reuse"><span>06</span>独立使用与拓展</a><a href="#usage"><span>07</span>使用说明</a><a href="#skill"><span>08</span>Skill安装与使用</a><p>工作流截图采用缩略概览。<br>点击图片可查看原图。<br>个人配置请使用自己的Coze与飞书空间。</p></nav><main><section id="overview" class="chapter"><h1>医疗科普图文系统：从主题到系列图片</h1>
+<p>本仓库另提供一套可安装到 Codex、WorkBuddy 等智能体中的<a href="#skill">独立 Skill</a>。工作流与 Skill 是两套：下文说明 Coze 实现；Skill 由当前智能体执行，不会自动接通 Coze。</p>
 <p>在Coze中，这套系统把内容制作拆成八个可以协作的工作流：从理解用户想做什么开始，经过选题与医学研究，最后完成文案、分镜、图片和飞书归档。</p>
 <p>这份文档面向想了解系统、使用系统，或借鉴它搭建其他业务流程的读者。可以从<a href="%E5%B1%95%E7%A4%BA.html">图文展示版</a>完整阅读，也可以按下面的主题选择章节。</p>
 <h2>文档导航</h2>
@@ -23,6 +24,10 @@ footer{max-width:1250px;margin:0 auto;padding:0 28px 30px;color:var(--muted);fon
 </tr>
 </thead>
 <tbody>
+<tr>
+  <td><a href="#skill">独立 Skill · 安装与使用</a></td>
+  <td>怎样在 Codex、WorkBuddy 中使用，与 Coze 有什么区别？</td>
+</tr>
 <tr>
   <td><a href="#sop">01 · 整体流程与操作SOP</a></td>
   <td>一个新主题来了以后，系统怎样一步步完成内容制作？</td>
@@ -930,15 +935,15 @@ footer{max-width:1250px;margin:0 auto;padding:0 28px 30px;color:var(--muted);fon
 <p>这些问题确定后，再选择需要的工作流组合。模块之间的交接越明确，越容易为自己的场景取用和调整。</p>
 <p><a href="#overview">返回总览</a></p>
 </section><section id="usage" class="chapter"><h1>使用说明</h1>
-<p>本仓库整理了Coze医疗科普图文系统的设计、SOP、工作流概览、图文样例与复用方法。阅读文档可以直接开始；运行实际内容生产，需要在自己的Coze空间准备相应工作流和飞书配置。</p>
-<p>当前仓库未附可直接导入Coze的工作流导出包，仓库中的Python脚本用于生成和检查文档。</p>
+<p>本页说明 <strong>Coze 工作流方案</strong>的阅读、搭建与使用。若要让 Codex、WorkBuddy 等智能体执行科普创作，请阅读<a href="#skill">Skill 安装与使用</a>。两套方案分别运行，安装 Skill 不会替你导入或连接 Coze 工作流。</p>
+<p>Coze 部分未附可直接导入的工作流导出包；<code>tools/</code>用于文档生成、发布检查和技能打包，<code>skills/</code>内另有独立技能及可选项目脚本。</p>
 <h2>1. 阅读文档</h2>
 <p>可以直接阅读GitHub首页README，再进入各章节。也可以从Code菜单选择Download ZIP，解压后双击<code>docs/展示.html</code>，离线查看完整图文版。</p>
 <p>使用Git下载：</p>
 <pre><code class="language-bash">git clone https://github.com/luziyangz/coze-medical-infographic-system.git
 cd coze-medical-infographic-system
 </code></pre>
-<p>仓库为私有时，需要使用有访问权限的GitHub账号。</p>
+<p>这是公开仓库，阅读与下载不需要作者的账号权限。</p>
 <table>
 <thead>
 <tr>
@@ -1109,11 +1114,174 @@ cd coze-medical-infographic-system
 <p>在这个独立文档仓库中修改并生成HTML，检查通过后同步：</p>
 <pre><code class="language-bash">python tools/check_release.py
 git status --short
-git add README.md docs tools config requirements.txt .env.example .gitignore .gitattributes
+git add README.md docs tools config skills tests requirements.txt .env.example .gitignore .gitattributes
 git diff --cached --stat
 git commit -m &quot;Update documentation&quot;
 git push
 </code></pre>
 <p>提交前查看暂存区文件列表，确认个人配置没有进入提交。检查脚本负责常见文本标识和文件引用检查，新增图片仍需人工查看内容。</p>
 <p><a href="../README.md">返回首页</a></p>
+</section><section id="skill" class="chapter"><h1>在 Codex、WorkBuddy 中使用 Skill</h1>
+<p>本仓库同时提供 <strong>Coze 工作流方案</strong>与 <strong>独立智能体 Skill</strong>。它们借鉴同一套内容生产方法，由不同运行环境执行。</p>
+<h2>1. 工作流和 Skill 是两套</h2>
+<table>
+<thead>
+<tr>
+  <th>对比</th>
+  <th>Coze 工作流方案</th>
+  <th>本仓库 Skill</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>在哪里执行</td>
+  <td>使用者自己的 Coze 空间</td>
+  <td>Codex、WorkBuddy 等支持 Agent Skills 的智能体</td>
+</tr>
+<tr>
+  <td>谁安排步骤</td>
+  <td>主对话与工作流节点</td>
+  <td>当前智能体读取技能指令，安排步骤和工具</td>
+</tr>
+<tr>
+  <td>提供了什么</td>
+  <td>系统设计、SOP、真实工作流截图、图文案例</td>
+  <td>可安装技能、内容生产方法、项目模板、可选本地脚本</td>
+</tr>
+<tr>
+  <td>搜索与模型</td>
+  <td>在 Coze 配置</td>
+  <td>使用宿主已接入的能力</td>
+</tr>
+<tr>
+  <td>实际出图</td>
+  <td>Coze Graphic 与配置的图像服务</td>
+  <td>宿主中实际可用的图像生成工具</td>
+</tr>
+<tr>
+  <td>飞书读写</td>
+  <td>Coze 插件、认证与数据表</td>
+  <td>使用者自己在宿主中配置的连接或 API</td>
+</tr>
+<tr>
+  <td>状态与输入</td>
+  <td>Coze 自己的节点协议和会话状态</td>
+  <td>独立 <code>project.json</code>；不能直接替代 Coze 输入</td>
+</tr>
+<tr>
+  <td>是否相互调用</td>
+  <td>根据 Coze 中实际依赖执行</td>
+  <td>本版本不自动调用、修改或导入 Coze 工作流</td>
+</tr>
+</tbody>
+</table>
+<p><strong>安装 Skill 后就可以用智能体整理需求、策划选题、阅读资料、编写文案和分镜。</strong> 能否实际生成图片、读取资产和保存飞书，取决于当前宿主中的工具与个人配置。Skill 不附作者账号权限、密钥、私有资产库或模型服务。</p>
+<p>原仓库展示的八张画布和六页候选图片属于 Coze 方案的案例；不是本 Skill 的运行效果承诺。</p>
+<h2>2. 获取独立技能包</h2>
+<ul>
+<li>技能源码：<a href="../skills/medical-education-studio/SKILL.md">medical-education-studio</a>。</li>
+<li>可导入安装包：<a href="https://github.com/luziyangz/coze-medical-infographic-system/releases/download/skill-v1.0.0/medical-education-studio.zip">下载 medical-education-studio.zip</a>。</li>
+<li>版本说明与校验值：<a href="https://github.com/luziyangz/coze-medical-infographic-system/releases/tag/skill-v1.0.0">Skill v1.0.0</a>。</li>
+</ul>
+<p>安装包只包含这一个技能及其引用文件。它不包含整个文档仓库、工作流截图、原始导出包或私人配置。</p>
+<pre><code class="language-text">medical-education-studio/
+  SKILL.md
+  agents/openai.yaml
+  references/
+  assets/project.template.json
+  scripts/init_project.py
+  scripts/validate_project.py
+</code></pre>
+<p>完整目录必须一起安装；仅复制 <code>SKILL.md</code> 会遗漏方法、模板和可选脚本。脚本使用 Python 3.10+ 标准库，无需安装第三方依赖；没有 Python 也可由智能体按模板手工维护项目。</p>
+<h2>3. 在 Codex 中安装</h2>
+<p>下载独立 ZIP 并解压，将整个 <code>medical-education-studio</code> 文件夹放入用户主目录的 <code>.agents/skills/</code>。也可以克隆仓库后复制 <code>skills/medical-education-studio/</code>。Codex 当前官方文档将这个目录列为用户级技能目录。<a href="https://developers.openai.com/codex/skills/">Codex Skills 官方说明</a></p>
+<p>在仓库根目录执行以下 PowerShell 命令可以安装到当前用户，已有同名目录时会停止，方便先备份再决定更新：</p>
+<pre><code class="language-powershell">$skillSource = Join-Path (Get-Location) 'skills/medical-education-studio'
+$skillTarget = Join-Path $HOME '.agents/skills/medical-education-studio'
+if (Test-Path -LiteralPath $skillTarget) { throw '同名技能已存在，请先备份或检查版本。' }
+New-Item -ItemType Directory -Path (Split-Path $skillTarget) -Force | Out-Null
+Copy-Item -LiteralPath $skillSource -Destination $skillTarget -Recurse
+</code></pre>
+<p>macOS/Linux 同样将文件夹放入 <code>~/.agents/skills/</code>。若只想在某个项目使用，可以放入该项目的 <code>.agents/skills/</code>；选一种安装范围即可，避免出现同名技能的重复条目。</p>
+<p>安装后打开新的任务，使用技能选择器或输入 <code>$medical-education-studio</code>。若未出现，重启或刷新宿主后再查看。<a href="https://developers.openai.com/codex/skills/">技能发现与调用方式</a></p>
+<pre><code class="language-text">请使用 $medical-education-studio。
+我想做面向家长的儿童睡眠科普，先帮我明确需求与具体选题。
+暂时只做策划，不生成图片。
+</code></pre>
+<h2>4. 在 WorkBuddy 中安装</h2>
+<p>下载上面的独立技能 ZIP。在 WorkBuddy 左侧进入“专家·技能·连接器”，选择“技能”，再通过“添加技能 → 上传技能”选择本地技能包；导入后在“已安装”中确认已启用。这是 WorkBuddy 官方提供的本地技能包导入入口。<a href="https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market">WorkBuddy 技能官方说明</a></p>
+<p>对话里使用技能名称和自然语言说明任务，例如：</p>
+<pre><code class="language-text">请使用“医疗科普创作工作室”（medical-education-studio）技能。
+根据我提供的已确认资料，制作六页家长版科普的文案、分镜和水彩视觉方案。
+这一轮只交付制作包。
+</code></pre>
+<p>WorkBuddy 的对话安装入口主要面向技能市场；本仓库是自行提供的技能包，请使用上传入口。安装本包不表示已上架 WorkBuddy 技能市场。<a href="https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market">官方导入方式</a></p>
+<h2>5. 在其他智能体中使用</h2>
+<p>如果宿主支持包含 YAML 元数据的 <code>SKILL.md</code>，按其安装目录或本地包导入方式安装完整文件夹。<code>agents/openai.yaml</code> 是 Codex 的可选界面元数据，其他宿主可忽略；核心指令、方法与脚本不依赖 Codex 专有工具名称。<a href="https://agentskills.io/specification">Agent Skills 格式规范</a></p>
+<p>宿主完全不支持 Skills 时，也可以让它读取本地 <code>SKILL.md</code>，并按需读取相邻 <code>references/</code>；这属于手工加载指令，不等于已完成原生技能安装。</p>
+<h2>6. 按本次需要选择用法</h2>
+<table>
+<thead>
+<tr>
+  <th>需要什么</th>
+  <th>可以怎样说</th>
+  <th>产物</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>只整理需求</td>
+  <td>“先把我的科普想法整理成需求简报。”</td>
+  <td>已知需求、未确定项与必要追问</td>
+</tr>
+<tr>
+  <td>只做选题</td>
+  <td>“围绕这个方向，给我适合家长阅读的几个切入点。”</td>
+  <td>可比较的具体问题与选题角度</td>
+</tr>
+<tr>
+  <td>研究与文案</td>
+  <td>“选择第二个问题，查资料后给我证据卡和正文。”</td>
+  <td>真实来源、适用边界与文案</td>
+</tr>
+<tr>
+  <td>从资料到分镜</td>
+  <td>“用这份资料做六页，先看每页文字和画面说明。”</td>
+  <td>标题、正文、逐页分镜</td>
+</tr>
+<tr>
+  <td>只做视觉方案</td>
+  <td>“保留文字，给我一套统一的3D风格制作包。”</td>
+  <td>风格、角色、布局与逐页提示词</td>
+</tr>
+<tr>
+  <td>实际出图</td>
+  <td>“按确认后的分镜生成候选图片。”</td>
+  <td>有图像工具时生成实际图片，并反馈缺页与复核情况</td>
+</tr>
+<tr>
+  <td>飞书归档</td>
+  <td>“把这套已生成图文保存到我指定的飞书表。”</td>
+  <td>有个人连接和写入权限时保存，并反馈真实记录</td>
+</tr>
+</tbody>
+</table>
+<p>医学研究会区分已支持、证据有限、待核实和技术失败；视觉方案、真实候选图、质量复核与保存结果分别记录。用户因此可以先使用已有产物，再继续后续阶段。</p>
+<h2>7. 保存任务，下一轮继续</h2>
+<p>让智能体把结果保存在独立目录即可，例如：“把这个项目保存为 <code>outputs/sleep-parent/</code>，后面继续修改。”目录中记录需求、选题、来源、文案、视觉和交付状态；不是保存账号配置的位置。</p>
+<p>也可以在仓库根目录用可选脚本初始化：</p>
+<pre><code class="language-bash">python skills/medical-education-studio/scripts/init_project.py outputs/sleep-parent --direction &quot;儿童睡眠科普&quot; --audience &quot;家长&quot; --pages 6
+python skills/medical-education-studio/scripts/validate_project.py outputs/sleep-parent
+</code></pre>
+<p>初始化只建立状态文件和图片目录，不会检索、生成医学内容、出图或调用飞书，也不会覆盖已有项目。结构检查用于发现字段、引用和本地文件问题，不验证医学事实或图片质量。</p>
+<p>续做时说：“继续 <code>outputs/sleep-parent/</code>，保留文字，风格改为水彩。”智能体读取已有项目，更新受影响阶段。同方向换选题保留需求；明确换科普方向则新开项目。</p>
+<h2>8. 维护与重新打包</h2>
+<p>修改 <code>skills/medical-education-studio/</code> 后，在仓库根目录运行：</p>
+<pre><code class="language-bash">python -m unittest discover -s tests -v
+python tools/render_docs.py
+python tools/check_release.py
+python tools/package_skill.py ../medical-education-studio.zip
+</code></pre>
+<p>新包输出路径必须尚不存在。把 ZIP 放在仓库外，避免与包含私人认证的原始工作流导出包混在一起。发布前核对技能引用、安装说明、实际脚本与包内文件一致；个人项目和连接配置不要放入技能源码。</p>
+<p><a href="../README.md">返回首页</a> · <a href="#usage">Coze 方案使用说明</a></p>
 </section></main></div><footer>医疗科普图文系统 · 工作流逻辑、使用方式与模块复用</footer></body></html>

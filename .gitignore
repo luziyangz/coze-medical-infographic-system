@@ -15,5 +15,6 @@ __pycache__/
 private/
 backups/
 raw-workflows/
+outputs/
 .DS_Store
 Thumbs.db
